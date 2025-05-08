@@ -1,0 +1,3 @@
+(library
+ (name obric)
+ (public_name obric))
