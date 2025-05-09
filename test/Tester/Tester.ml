@@ -39,7 +39,7 @@ let register (name : string) (run : unit -> unit) : unit =
 
 let run_test (test : test) : unit =
   let { name; run; _ } = test in
-  Printf.eprintf "\x1b[30;45m test \x1b[39;49m \x1b[36m%s\x1b[39m - " name;
+  Printf.eprintf "\x1b[30;45m TEST \x1b[39;49m \x1b[36m%s\x1b[39m - " name;
   match run () with
   | () ->
     test.status <- Passed;
