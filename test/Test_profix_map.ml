@@ -14,7 +14,7 @@ module Function = struct
   ;;
 end
 
-module Fixed = Pro_fix.Make (Function)
+module Fixed = Pro_fix.With_apply (Function)
 
 let rec fix (func : ('a, 'b) Fixed.t -> 'a -> 'b) : ('a, 'b) Fixed.t =
   Fix (func, fun x -> Fixed.apply (fix func) x)

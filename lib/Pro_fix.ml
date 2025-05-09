@@ -6,7 +6,6 @@ module type TYPE = sig
   type ('a, 'b) t = Fix of ((('a, 'b) t -> 'a -> 'b) * ('a, 'b) T.t)
 
   val unfix : ('a, 'b) t -> ('a, 'b) T.t
-  val apply : ('a, 'b) t -> 'a -> 'b
 end
 
 module Make (T : TYPE2) : TYPE with module T = T = struct
@@ -15,6 +14,10 @@ module Make (T : TYPE2) : TYPE with module T = T = struct
   type ('a, 'b) t = Fix of ((('a, 'b) t -> 'a -> 'b) * ('a, 'b) T.t)
 
   let unfix (Fix (_, f)) = f
+end
+
+module With_apply (T : TYPE2) = struct
+  include Make (T)
 
   let apply (func : ('a, 'b) t) (arg : 'a) : 'b =
     match func with
