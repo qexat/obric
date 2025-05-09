@@ -12,6 +12,12 @@ module type BIFUNCTOR = sig
   val map : ('a -> 'c) -> ('b -> 'd) -> ('a, 'b) t -> ('c, 'd) t
 end
 
+module type PROFUNCTOR = sig
+  include TYPE2
+
+  val map : ('c -> 'a) -> ('b -> 'd) -> ('a, 'b) t -> ('c, 'd) t
+end
+
 module type FOLDABLE = sig
   include TYPE1
 
