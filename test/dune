@@ -1,4 +1,4 @@
 (test
  (name test_obric)
- (libraries obric)
+ (libraries obric tester)
  (flags -linkall))

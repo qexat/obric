@@ -1,5 +1,4 @@
-open! Test_fix_fold
-open! Test_fix_map
-open! Test_profix_map
+open! Test_function
+open! Test_list
 
-let () = Test_manager.run ()
+let () = Tester.run ()
