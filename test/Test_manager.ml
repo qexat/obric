@@ -57,7 +57,7 @@ let run () =
   match !registered_tests with
   | [] -> Logging.warn "no test was run."
   | tests ->
-    List.iter run_test tests;
+    List.iter run_test (List.rev tests);
     Printf.eprintf "\n";
     let failures = count_failures () in
     if failures > 0
