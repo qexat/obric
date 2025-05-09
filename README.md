@@ -1,6 +1,6 @@
 # Okay But Recursion Is Cool
 
-cool stuff with recursion. to see examples of use, I recommend checking out the tests.
+cool stuff with recursion. to see examples of use, I recommend checking out the [tests](./test/).
 
 ## run
 

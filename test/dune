@@ -1,3 +1,5 @@
+;; test suite
+
 (test
  (name test_obric)
  (libraries obric tester)
